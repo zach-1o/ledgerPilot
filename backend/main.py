@@ -1,14 +1,14 @@
 import json
 import os
-from typing import List, Optional, Dict
-from fastapi import FastAPI, Query, HTTPException, UploadFile, File, Form, Body
+from typing import List, Optional, Dict, Any
+from fastapi import FastAPI, Query, HTTPException, UploadFile, File, Form, Body, Request
 from fastapi.middleware.cors import CORSMiddleware
 from backend.schemas import (
     Invoice, Payment, Settlement, BankTransaction, GroundTruth, ReconciliationResult, MatchStatus, RootCause
 )
 from backend.config import load_settings, save_settings, AppSettings
-from backend.engine.deterministic import DeterministicEngine
-from backend.engine.investigator import LLMInvestigator
+from backend.agent.controller import AgentController
+from backend.agent.tools import FinanceToolRegistry
 from backend.engine.parser import UniversalParser
 from backend.engine.razorpay_client import RazorpayClient
 from backend.channels.telegram_bot import TelegramChannel
@@ -37,19 +37,8 @@ CACHE = {
     "payments": [],
     "settlements": [],
     "bank_txns": [],
-    "activity_log": []
+    "controller": None
 }
-
-def log_activity(action: str, details: str, chain_id: Optional[str] = None):
-    import datetime
-    CACHE["activity_log"].insert(0, {
-        "timestamp": datetime.datetime.now().strftime("%H:%M:%S"),
-        "action": action,
-        "details": details,
-        "chain_id": chain_id
-    })
-    # Keep last 50 events
-    CACHE["activity_log"] = CACHE["activity_log"][:50]
 
 def load_all_datasets():
     invs = [Invoice(**x) for x in json.load(open(os.path.join(DATA_DIR, "invoices.json")))]
@@ -63,7 +52,7 @@ def health_check():
     return {
         "status": "online",
         "system": "LedgerPilot AI Finance Controller",
-        "mode": "Hermes-Style Autonomous Ready",
+        "mode": "Agentic Tool Loop Active",
         "version": "1.0.0"
     }
 
@@ -76,67 +65,97 @@ def get_app_settings():
 @app.post("/api/settings")
 def update_app_settings(settings: AppSettings = Body(...)):
     saved = save_settings(settings)
-    log_activity("SETTINGS_UPDATED", "Updated Telegram, Email, and Authority limits via Control Plane")
     return {"status": "success", "settings": saved.model_dump()}
 
 @app.post("/api/settings/test-telegram")
-def test_telegram_connection(
-    token: str = Form(...),
-    chat_id: str = Form(...)
-):
+def test_telegram_connection(token: str = Form(...), chat_id: str = Form(...)):
     try:
         res = TelegramChannel.send_test_message(token, chat_id)
-        log_activity("TELEGRAM_TEST", f"Sent test message to chat {chat_id}")
         return {"status": "success", "response": res}
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Telegram test failed: {str(e)}")
 
 @app.get("/api/activity")
-def get_activity_feed():
-    return {"events": CACHE["activity_log"]}
+def get_agent_trace():
+    if CACHE["controller"]:
+        return {"events": CACHE["controller"].trace}
+    return {"events": []}
 
-# --- Reconciliation & Processing API ---
+# --- Reconciliation & Agent Controller API ---
 
 @app.post("/api/reconcile/run")
 def trigger_reconciliation():
     invs, pays, sets, banks = load_all_datasets()
+    data_store = {
+        "invoices": invs,
+        "payments": pays,
+        "settlements": sets,
+        "bank_txns": banks
+    }
     CACHE["invoices"] = invs
     CACHE["payments"] = pays
     CACHE["settlements"] = sets
     CACHE["bank_txns"] = banks
 
-    engine = DeterministicEngine(invs, pays, sets, banks)
-    results, unresolved = engine.run_reconciliation()
-    
-    investigator = LLMInvestigator()
-    for case in unresolved:
-        res = investigator.investigate(case)
-        results.append(res)
+    controller = AgentController(data_store)
+    results, summary = controller.run_autonomous_loop()
 
+    CACHE["controller"] = controller
     CACHE["results"] = results
-    CACHE["summary"] = run_evaluation()
-
-    log_activity("RECONCILIATION_RUN", f"Processed 200 record chains. Closure rate: {CACHE['summary'].get('controller_closure_rate')}")
+    CACHE["summary"] = summary
     
-    # Send sample alert to Telegram if configured for the first exception
-    exceptions = [r for r in results if r.status in [MatchStatus.EXCEPTION, MatchStatus.HIGH_RISK]]
-    if exceptions:
-        ex = exceptions[0]
-        TelegramChannel.send_exception_alert(
-            chain_id=ex.chain_id,
-            invoice_id=ex.invoice_id or "N/A",
-            discrepancy=ex.discrepancy_amount,
-            explanation=ex.explanation,
-            severity=ex.severity.value,
-            confidence=ex.confidence_score
-        )
-        log_activity("TELEGRAM_ALERT_SENT", f"Pushed Telegram alert for exception {ex.chain_id}", ex.chain_id)
-
     return {
         "status": "success",
-        "message": f"Successfully processed {len(results)} transaction chains.",
-        "summary": CACHE["summary"]
+        "message": f"Successfully executed agent controller loop across {len(results)} record chains.",
+        "summary": summary
     }
+
+@app.post("/api/telegram/webhook")
+async def handle_telegram_callback(request: Request):
+    """Processes interactive Telegram button callbacks (approve, reject, inspect)."""
+    try:
+        payload = await request.json()
+        callback_query = payload.get("callback_query")
+        if not callback_query:
+            return {"status": "ignored"}
+
+        data = callback_query.get("data", "")
+        action, chain_id = data.split(":") if ":" in data else (data, "")
+        controller = CACHE.get("controller")
+
+        if action == "approve" and chain_id:
+            # Execute adjustment tool
+            adj_res = FinanceToolRegistry.execute_financial_adjustment(chain_id, 500.0, "Approved by Owner via Telegram")
+            audit_id = adj_res["data"]["audit_id"]
+            
+            if controller:
+                controller.log_trace("OWNER_APPROVED_TELEGRAM", f"Owner approved adjustment for {chain_id} via Telegram inline button", chain_id, {"audit_id": audit_id})
+                controller.log_trace("ACTION_EXECUTED", adj_res["message"], chain_id)
+                ver_res = FinanceToolRegistry.verify_outcome_consistency(chain_id, audit_id)
+                controller.log_trace("VERIFICATION", ver_res["message"], chain_id)
+
+            # Update cache result
+            for r in CACHE["results"]:
+                if r.chain_id == chain_id:
+                    r.status = MatchStatus.RECONCILED
+                    r.explanation += f" (Approved via Telegram, Audit ID: {audit_id})"
+
+            return {"status": "success", "message": f"Approved {chain_id} under {audit_id}"}
+
+        elif action == "reject" and chain_id:
+            if controller:
+                controller.log_trace("OWNER_REJECTED_TELEGRAM", f"Owner rejected auto-resolution for {chain_id}. Escalated to manual human review.", chain_id)
+
+            for r in CACHE["results"]:
+                if r.chain_id == chain_id:
+                    r.status = MatchStatus.EXCEPTION
+                    r.explanation += " (Escalated by Owner via Telegram)"
+
+            return {"status": "success", "message": f"Escalated {chain_id}"}
+
+    except Exception as e:
+        print(f"Error handling Telegram callback: {e}")
+    return {"status": "error"}
 
 @app.post("/api/reconcile/upload")
 async def upload_and_reconcile(
@@ -160,36 +179,19 @@ async def upload_and_reconcile(
         content = (await bank_file.read()).decode("utf-8")
         banks = UniversalParser.parse_bank_csv(content)
 
-    CACHE["invoices"] = invs
-    CACHE["payments"] = pays
-    CACHE["settlements"] = sets
-    CACHE["bank_txns"] = banks
+    data_store = {"invoices": invs, "payments": pays, "settlements": sets, "bank_txns": banks}
+    controller = AgentController(data_store)
+    results, summary = controller.run_autonomous_loop()
 
-    engine = DeterministicEngine(invs, pays, sets, banks)
-    results, unresolved = engine.run_reconciliation()
-
-    investigator = LLMInvestigator()
-    for case in unresolved:
-        res = investigator.investigate(case)
-        results.append(res)
-
+    CACHE["controller"] = controller
     CACHE["results"] = results
-    auto_closed = len([r for r in results if r.status in [MatchStatus.RECONCILED, MatchStatus.PROBABLE_MATCH]])
-    exceptions = len([r for r in results if r.status in [MatchStatus.EXCEPTION, MatchStatus.HIGH_RISK]])
-    
-    CACHE["summary"] = {
-        "total_records": len(results),
-        "auto_closed_records": auto_closed,
-        "controller_closure_rate": f"{round((auto_closed/len(results))*100, 1)}%" if results else "0%",
-        "exceptions_flagged": exceptions,
-        "mode": "Custom Real-World Upload"
-    }
+    CACHE["summary"] = summary
+    summary["mode"] = "Custom Real-World Upload"
 
-    log_activity("CSV_UPLOAD_RECONCILE", f"Processed {len(results)} custom uploaded records")
     return {
         "status": "success",
         "message": f"Processed {len(results)} uploaded transaction chains.",
-        "summary": CACHE["summary"]
+        "summary": summary
     }
 
 @app.post("/api/reconcile/razorpay-sync")
@@ -210,35 +212,19 @@ def sync_razorpay_test_mode(key_id: str = Form(...), key_secret: str = Form(...)
             description=f"Razorpay Payout {s.bank_reference}"
         ) for s in sets]
 
-        CACHE["invoices"] = invs
-        CACHE["payments"] = pays
-        CACHE["settlements"] = sets
-        CACHE["bank_txns"] = banks
+        data_store = {"invoices": invs, "payments": pays, "settlements": sets, "bank_txns": banks}
+        controller = AgentController(data_store)
+        results, summary = controller.run_autonomous_loop()
 
-        engine = DeterministicEngine(invs, pays, sets, banks)
-        results, unresolved = engine.run_reconciliation()
-
-        investigator = LLMInvestigator()
-        for case in unresolved:
-            res = investigator.investigate(case)
-            results.append(res)
-
+        CACHE["controller"] = controller
         CACHE["results"] = results
-        auto_closed = len([r for r in results if r.status in [MatchStatus.RECONCILED, MatchStatus.PROBABLE_MATCH]])
-        
-        CACHE["summary"] = {
-            "total_records": len(results),
-            "auto_closed_records": auto_closed,
-            "controller_closure_rate": f"{round((auto_closed/len(results))*100, 1)}%" if results else "0%",
-            "exceptions_flagged": len(results) - auto_closed,
-            "mode": "Razorpay Test-Mode Live Sync"
-        }
+        CACHE["summary"] = summary
+        summary["mode"] = "Razorpay Test-Mode Live Sync"
 
-        log_activity("RAZORPAY_API_SYNC", f"Synced 50 payments and 50 settlements live from Razorpay Sandbox")
         return {
             "status": "success",
             "message": f"Successfully synced {len(results)} live sandbox records from Razorpay API.",
-            "summary": CACHE["summary"]
+            "summary": summary
         }
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Razorpay API Sync failed: {str(e)}")

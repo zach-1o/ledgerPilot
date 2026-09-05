@@ -1,0 +1,12 @@
+{
+  "telegram_bot_token": "",
+  "owner_chat_id": "",
+  "target_email": "finance@merchant.com",
+  "authority": {
+    "auto_approve_limit": 10000.0,
+    "approval_required_limit": 50000.0
+  },
+  "razorpay_key_id": "",
+  "razorpay_key_secret": "",
+  "enable_auto_sync": false
+}
