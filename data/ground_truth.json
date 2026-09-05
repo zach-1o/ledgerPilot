@@ -1,0 +1,1402 @@
+[
+  {
+    "chain_id": "CHAIN-0001",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0002",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0003",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0004",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0005",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0006",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0007",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0008",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0009",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0010",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0011",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0012",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0013",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0014",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0015",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0016",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0017",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0018",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0019",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0020",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0021",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0022",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0023",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0024",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0025",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0026",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0027",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0028",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0029",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0030",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0031",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0032",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0033",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0034",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0035",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0036",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0037",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0038",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0039",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0040",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0041",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0042",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0043",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0044",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0045",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0046",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0047",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0048",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0049",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0050",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0051",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0052",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0053",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0054",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0055",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0056",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0057",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0058",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0059",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0060",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0061",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0062",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0063",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0064",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0065",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0066",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0067",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0068",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0069",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0070",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0071",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0072",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0073",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0074",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0075",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0076",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0077",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0078",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0079",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0080",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0081",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0082",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0083",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0084",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0085",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0086",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0087",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0088",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0089",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0090",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0091",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0092",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0093",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0094",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0095",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0096",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0097",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0098",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0099",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0100",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0101",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0102",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0103",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0104",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0105",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0106",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0107",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0108",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0109",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0110",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0111",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0112",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0113",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0114",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0115",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0116",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0117",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0118",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0119",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0120",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0121",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0122",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0123",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0124",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0125",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0126",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0127",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0128",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0129",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0130",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0131",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0132",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0133",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0134",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0135",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0136",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0137",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0138",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0139",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0140",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "CLEAN_MATCH",
+    "expected_discrepancy": 0.0,
+    "notes": "Perfect 4-way match."
+  },
+  {
+    "chain_id": "CHAIN-0141",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 354.0,
+    "notes": "Reconciled after applying 2% PG Fee (300.0) + 18% GST (54.0)."
+  },
+  {
+    "chain_id": "CHAIN-0142",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 47.2,
+    "notes": "Reconciled after applying 2% PG Fee (40.0) + 18% GST (7.2)."
+  },
+  {
+    "chain_id": "CHAIN-0143",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 47.2,
+    "notes": "Reconciled after applying 2% PG Fee (40.0) + 18% GST (7.2)."
+  },
+  {
+    "chain_id": "CHAIN-0144",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 118.0,
+    "notes": "Reconciled after applying 2% PG Fee (100.0) + 18% GST (18.0)."
+  },
+  {
+    "chain_id": "CHAIN-0145",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 47.2,
+    "notes": "Reconciled after applying 2% PG Fee (40.0) + 18% GST (7.2)."
+  },
+  {
+    "chain_id": "CHAIN-0146",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 47.2,
+    "notes": "Reconciled after applying 2% PG Fee (40.0) + 18% GST (7.2)."
+  },
+  {
+    "chain_id": "CHAIN-0147",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 118.0,
+    "notes": "Reconciled after applying 2% PG Fee (100.0) + 18% GST (18.0)."
+  },
+  {
+    "chain_id": "CHAIN-0148",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 236.0,
+    "notes": "Reconciled after applying 2% PG Fee (200.0) + 18% GST (36.0)."
+  },
+  {
+    "chain_id": "CHAIN-0149",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 354.0,
+    "notes": "Reconciled after applying 2% PG Fee (300.0) + 18% GST (54.0)."
+  },
+  {
+    "chain_id": "CHAIN-0150",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 118.0,
+    "notes": "Reconciled after applying 2% PG Fee (100.0) + 18% GST (18.0)."
+  },
+  {
+    "chain_id": "CHAIN-0151",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 118.0,
+    "notes": "Reconciled after applying 2% PG Fee (100.0) + 18% GST (18.0)."
+  },
+  {
+    "chain_id": "CHAIN-0152",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 118.0,
+    "notes": "Reconciled after applying 2% PG Fee (100.0) + 18% GST (18.0)."
+  },
+  {
+    "chain_id": "CHAIN-0153",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 354.0,
+    "notes": "Reconciled after applying 2% PG Fee (300.0) + 18% GST (54.0)."
+  },
+  {
+    "chain_id": "CHAIN-0154",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 236.0,
+    "notes": "Reconciled after applying 2% PG Fee (200.0) + 18% GST (36.0)."
+  },
+  {
+    "chain_id": "CHAIN-0155",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 354.0,
+    "notes": "Reconciled after applying 2% PG Fee (300.0) + 18% GST (54.0)."
+  },
+  {
+    "chain_id": "CHAIN-0156",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 354.0,
+    "notes": "Reconciled after applying 2% PG Fee (300.0) + 18% GST (54.0)."
+  },
+  {
+    "chain_id": "CHAIN-0157",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 354.0,
+    "notes": "Reconciled after applying 2% PG Fee (300.0) + 18% GST (54.0)."
+  },
+  {
+    "chain_id": "CHAIN-0158",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 118.0,
+    "notes": "Reconciled after applying 2% PG Fee (100.0) + 18% GST (18.0)."
+  },
+  {
+    "chain_id": "CHAIN-0159",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 118.0,
+    "notes": "Reconciled after applying 2% PG Fee (100.0) + 18% GST (18.0)."
+  },
+  {
+    "chain_id": "CHAIN-0160",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 236.0,
+    "notes": "Reconciled after applying 2% PG Fee (200.0) + 18% GST (36.0)."
+  },
+  {
+    "chain_id": "CHAIN-0161",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 236.0,
+    "notes": "Reconciled after applying 2% PG Fee (200.0) + 18% GST (36.0)."
+  },
+  {
+    "chain_id": "CHAIN-0162",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 354.0,
+    "notes": "Reconciled after applying 2% PG Fee (300.0) + 18% GST (54.0)."
+  },
+  {
+    "chain_id": "CHAIN-0163",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 236.0,
+    "notes": "Reconciled after applying 2% PG Fee (200.0) + 18% GST (36.0)."
+  },
+  {
+    "chain_id": "CHAIN-0164",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 236.0,
+    "notes": "Reconciled after applying 2% PG Fee (200.0) + 18% GST (36.0)."
+  },
+  {
+    "chain_id": "CHAIN-0165",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 47.2,
+    "notes": "Reconciled after applying 2% PG Fee (40.0) + 18% GST (7.2)."
+  },
+  {
+    "chain_id": "CHAIN-0166",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 236.0,
+    "notes": "Reconciled after applying 2% PG Fee (200.0) + 18% GST (36.0)."
+  },
+  {
+    "chain_id": "CHAIN-0167",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 354.0,
+    "notes": "Reconciled after applying 2% PG Fee (300.0) + 18% GST (54.0)."
+  },
+  {
+    "chain_id": "CHAIN-0168",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 47.2,
+    "notes": "Reconciled after applying 2% PG Fee (40.0) + 18% GST (7.2)."
+  },
+  {
+    "chain_id": "CHAIN-0169",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 236.0,
+    "notes": "Reconciled after applying 2% PG Fee (200.0) + 18% GST (36.0)."
+  },
+  {
+    "chain_id": "CHAIN-0170",
+    "expected_status": "RECONCILED",
+    "expected_root_cause": "GATEWAY_FEE_GST",
+    "expected_discrepancy": 47.2,
+    "notes": "Reconciled after applying 2% PG Fee (40.0) + 18% GST (7.2)."
+  },
+  {
+    "chain_id": "CHAIN-0171",
+    "expected_status": "PROBABLE_MATCH",
+    "expected_root_cause": "DATE_DRIFT",
+    "expected_discrepancy": 0.0,
+    "notes": "Probable match with 1-day date window drift."
+  },
+  {
+    "chain_id": "CHAIN-0172",
+    "expected_status": "PROBABLE_MATCH",
+    "expected_root_cause": "DATE_DRIFT",
+    "expected_discrepancy": 0.0,
+    "notes": "Probable match with 1-day date window drift."
+  },
+  {
+    "chain_id": "CHAIN-0173",
+    "expected_status": "PROBABLE_MATCH",
+    "expected_root_cause": "DATE_DRIFT",
+    "expected_discrepancy": 0.0,
+    "notes": "Probable match with 1-day date window drift."
+  },
+  {
+    "chain_id": "CHAIN-0174",
+    "expected_status": "PROBABLE_MATCH",
+    "expected_root_cause": "DATE_DRIFT",
+    "expected_discrepancy": 0.0,
+    "notes": "Probable match with 1-day date window drift."
+  },
+  {
+    "chain_id": "CHAIN-0175",
+    "expected_status": "PROBABLE_MATCH",
+    "expected_root_cause": "DATE_DRIFT",
+    "expected_discrepancy": 0.0,
+    "notes": "Probable match with 1-day date window drift."
+  },
+  {
+    "chain_id": "CHAIN-0176",
+    "expected_status": "PROBABLE_MATCH",
+    "expected_root_cause": "DATE_DRIFT",
+    "expected_discrepancy": 0.0,
+    "notes": "Probable match with 1-day date window drift."
+  },
+  {
+    "chain_id": "CHAIN-0177",
+    "expected_status": "PROBABLE_MATCH",
+    "expected_root_cause": "DATE_DRIFT",
+    "expected_discrepancy": 0.0,
+    "notes": "Probable match with 1-day date window drift."
+  },
+  {
+    "chain_id": "CHAIN-0178",
+    "expected_status": "PROBABLE_MATCH",
+    "expected_root_cause": "DATE_DRIFT",
+    "expected_discrepancy": 0.0,
+    "notes": "Probable match with 1-day date window drift."
+  },
+  {
+    "chain_id": "CHAIN-0179",
+    "expected_status": "PROBABLE_MATCH",
+    "expected_root_cause": "DATE_DRIFT",
+    "expected_discrepancy": 0.0,
+    "notes": "Probable match with 1-day date window drift."
+  },
+  {
+    "chain_id": "CHAIN-0180",
+    "expected_status": "PROBABLE_MATCH",
+    "expected_root_cause": "DATE_DRIFT",
+    "expected_discrepancy": 0.0,
+    "notes": "Probable match with 1-day date window drift."
+  },
+  {
+    "chain_id": "CHAIN-0181",
+    "expected_status": "PROBABLE_MATCH",
+    "expected_root_cause": "DATE_DRIFT",
+    "expected_discrepancy": 0.0,
+    "notes": "Probable match with 1-day date window drift."
+  },
+  {
+    "chain_id": "CHAIN-0182",
+    "expected_status": "PROBABLE_MATCH",
+    "expected_root_cause": "DATE_DRIFT",
+    "expected_discrepancy": 0.0,
+    "notes": "Probable match with 1-day date window drift."
+  },
+  {
+    "chain_id": "CHAIN-0183",
+    "expected_status": "PROBABLE_MATCH",
+    "expected_root_cause": "DATE_DRIFT",
+    "expected_discrepancy": 0.0,
+    "notes": "Probable match with 1-day date window drift."
+  },
+  {
+    "chain_id": "CHAIN-0184",
+    "expected_status": "PROBABLE_MATCH",
+    "expected_root_cause": "DATE_DRIFT",
+    "expected_discrepancy": 0.0,
+    "notes": "Probable match with 1-day date window drift."
+  },
+  {
+    "chain_id": "CHAIN-0185",
+    "expected_status": "PROBABLE_MATCH",
+    "expected_root_cause": "DATE_DRIFT",
+    "expected_discrepancy": 0.0,
+    "notes": "Probable match with 1-day date window drift."
+  },
+  {
+    "chain_id": "CHAIN-0186",
+    "expected_status": "EXCEPTION",
+    "expected_root_cause": "SETTLEMENT_ADJUSTMENT",
+    "expected_discrepancy": 500.0,
+    "notes": "Settlement short by \u20b9500.0 due to gateway reserve adjustment."
+  },
+  {
+    "chain_id": "CHAIN-0187",
+    "expected_status": "EXCEPTION",
+    "expected_root_cause": "SETTLEMENT_ADJUSTMENT",
+    "expected_discrepancy": 500.0,
+    "notes": "Settlement short by \u20b9500.0 due to gateway reserve adjustment."
+  },
+  {
+    "chain_id": "CHAIN-0188",
+    "expected_status": "EXCEPTION",
+    "expected_root_cause": "SETTLEMENT_ADJUSTMENT",
+    "expected_discrepancy": 500.0,
+    "notes": "Settlement short by \u20b9500.0 due to gateway reserve adjustment."
+  },
+  {
+    "chain_id": "CHAIN-0189",
+    "expected_status": "EXCEPTION",
+    "expected_root_cause": "SETTLEMENT_ADJUSTMENT",
+    "expected_discrepancy": 500.0,
+    "notes": "Settlement short by \u20b9500.0 due to gateway reserve adjustment."
+  },
+  {
+    "chain_id": "CHAIN-0190",
+    "expected_status": "EXCEPTION",
+    "expected_root_cause": "SETTLEMENT_ADJUSTMENT",
+    "expected_discrepancy": 500.0,
+    "notes": "Settlement short by \u20b9500.0 due to gateway reserve adjustment."
+  },
+  {
+    "chain_id": "CHAIN-0191",
+    "expected_status": "EXCEPTION",
+    "expected_root_cause": "DUPLICATE_PAYMENT",
+    "expected_discrepancy": 1200.0,
+    "notes": "Two payment records submitted for a single invoice."
+  },
+  {
+    "chain_id": "CHAIN-0192",
+    "expected_status": "EXCEPTION",
+    "expected_root_cause": "DUPLICATE_PAYMENT",
+    "expected_discrepancy": 1200.0,
+    "notes": "Two payment records submitted for a single invoice."
+  },
+  {
+    "chain_id": "CHAIN-0193",
+    "expected_status": "EXCEPTION",
+    "expected_root_cause": "DUPLICATE_PAYMENT",
+    "expected_discrepancy": 3400.0,
+    "notes": "Two payment records submitted for a single invoice."
+  },
+  {
+    "chain_id": "CHAIN-0194",
+    "expected_status": "EXCEPTION",
+    "expected_root_cause": "DUPLICATE_PAYMENT",
+    "expected_discrepancy": 3400.0,
+    "notes": "Two payment records submitted for a single invoice."
+  },
+  {
+    "chain_id": "CHAIN-0195",
+    "expected_status": "EXCEPTION",
+    "expected_root_cause": "MISSING_SETTLEMENT",
+    "expected_discrepancy": 5858.4,
+    "notes": "Payment captured but no settlement or bank payout record exists."
+  },
+  {
+    "chain_id": "CHAIN-0196",
+    "expected_status": "EXCEPTION",
+    "expected_root_cause": "MISSING_SETTLEMENT",
+    "expected_discrepancy": 5858.4,
+    "notes": "Payment captured but no settlement or bank payout record exists."
+  },
+  {
+    "chain_id": "CHAIN-0197",
+    "expected_status": "HIGH_RISK",
+    "expected_root_cause": "THRESHOLD_ANOMALY",
+    "expected_discrepancy": 0.0,
+    "notes": "Reconciled financially but flagged for suspicious repeated \u20b99,999 transactions."
+  },
+  {
+    "chain_id": "CHAIN-0198",
+    "expected_status": "HIGH_RISK",
+    "expected_root_cause": "THRESHOLD_ANOMALY",
+    "expected_discrepancy": 0.0,
+    "notes": "Reconciled financially but flagged for suspicious repeated \u20b99,999 transactions."
+  },
+  {
+    "chain_id": "CHAIN-0199",
+    "expected_status": "HIGH_RISK",
+    "expected_root_cause": "THRESHOLD_ANOMALY",
+    "expected_discrepancy": 0.0,
+    "notes": "Reconciled financially but flagged for suspicious repeated \u20b99,999 transactions."
+  },
+  {
+    "chain_id": "CHAIN-0200",
+    "expected_status": "HIGH_RISK",
+    "expected_root_cause": "THRESHOLD_ANOMALY",
+    "expected_discrepancy": 0.0,
+    "notes": "Reconciled financially but flagged for suspicious repeated \u20b99,999 transactions."
+  }
+]
