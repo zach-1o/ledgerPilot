@@ -1,15 +1,17 @@
 import json
 import os
-from typing import List, Optional
-from fastapi import FastAPI, Query, HTTPException, UploadFile, File, Form
+from typing import List, Optional, Dict
+from fastapi import FastAPI, Query, HTTPException, UploadFile, File, Form, Body
 from fastapi.middleware.cors import CORSMiddleware
 from backend.schemas import (
     Invoice, Payment, Settlement, BankTransaction, GroundTruth, ReconciliationResult, MatchStatus, RootCause
 )
+from backend.config import load_settings, save_settings, AppSettings
 from backend.engine.deterministic import DeterministicEngine
 from backend.engine.investigator import LLMInvestigator
 from backend.engine.parser import UniversalParser
 from backend.engine.razorpay_client import RazorpayClient
+from backend.channels.telegram_bot import TelegramChannel
 from backend.evaluate import run_evaluation
 
 app = FastAPI(
@@ -34,8 +36,20 @@ CACHE = {
     "invoices": [],
     "payments": [],
     "settlements": [],
-    "bank_txns": []
+    "bank_txns": [],
+    "activity_log": []
 }
+
+def log_activity(action: str, details: str, chain_id: Optional[str] = None):
+    import datetime
+    CACHE["activity_log"].insert(0, {
+        "timestamp": datetime.datetime.now().strftime("%H:%M:%S"),
+        "action": action,
+        "details": details,
+        "chain_id": chain_id
+    })
+    # Keep last 50 events
+    CACHE["activity_log"] = CACHE["activity_log"][:50]
 
 def load_all_datasets():
     invs = [Invoice(**x) for x in json.load(open(os.path.join(DATA_DIR, "invoices.json")))]
@@ -49,9 +63,39 @@ def health_check():
     return {
         "status": "online",
         "system": "LedgerPilot AI Finance Controller",
-        "mode": "Real-World Operational Ready",
+        "mode": "Hermes-Style Autonomous Ready",
         "version": "1.0.0"
     }
+
+# --- Settings & Control Plane API ---
+
+@app.get("/api/settings")
+def get_app_settings():
+    return load_settings().model_dump()
+
+@app.post("/api/settings")
+def update_app_settings(settings: AppSettings = Body(...)):
+    saved = save_settings(settings)
+    log_activity("SETTINGS_UPDATED", "Updated Telegram, Email, and Authority limits via Control Plane")
+    return {"status": "success", "settings": saved.model_dump()}
+
+@app.post("/api/settings/test-telegram")
+def test_telegram_connection(
+    token: str = Form(...),
+    chat_id: str = Form(...)
+):
+    try:
+        res = TelegramChannel.send_test_message(token, chat_id)
+        log_activity("TELEGRAM_TEST", f"Sent test message to chat {chat_id}")
+        return {"status": "success", "response": res}
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Telegram test failed: {str(e)}")
+
+@app.get("/api/activity")
+def get_activity_feed():
+    return {"events": CACHE["activity_log"]}
+
+# --- Reconciliation & Processing API ---
 
 @app.post("/api/reconcile/run")
 def trigger_reconciliation():
@@ -71,7 +115,23 @@ def trigger_reconciliation():
 
     CACHE["results"] = results
     CACHE["summary"] = run_evaluation()
+
+    log_activity("RECONCILIATION_RUN", f"Processed 200 record chains. Closure rate: {CACHE['summary'].get('controller_closure_rate')}")
     
+    # Send sample alert to Telegram if configured for the first exception
+    exceptions = [r for r in results if r.status in [MatchStatus.EXCEPTION, MatchStatus.HIGH_RISK]]
+    if exceptions:
+        ex = exceptions[0]
+        TelegramChannel.send_exception_alert(
+            chain_id=ex.chain_id,
+            invoice_id=ex.invoice_id or "N/A",
+            discrepancy=ex.discrepancy_amount,
+            explanation=ex.explanation,
+            severity=ex.severity.value,
+            confidence=ex.confidence_score
+        )
+        log_activity("TELEGRAM_ALERT_SENT", f"Pushed Telegram alert for exception {ex.chain_id}", ex.chain_id)
+
     return {
         "status": "success",
         "message": f"Successfully processed {len(results)} transaction chains.",
@@ -85,7 +145,6 @@ async def upload_and_reconcile(
     settlements_file: Optional[UploadFile] = File(None),
     bank_file: Optional[UploadFile] = File(None)
 ):
-    """Processes uploaded real merchant CSV statements dynamically."""
     invs, pays, sets, banks = load_all_datasets()
 
     if invoices_file:
@@ -126,6 +185,7 @@ async def upload_and_reconcile(
         "mode": "Custom Real-World Upload"
     }
 
+    log_activity("CSV_UPLOAD_RECONCILE", f"Processed {len(results)} custom uploaded records")
     return {
         "status": "success",
         "message": f"Processed {len(results)} uploaded transaction chains.",
@@ -134,13 +194,11 @@ async def upload_and_reconcile(
 
 @app.post("/api/reconcile/razorpay-sync")
 def sync_razorpay_test_mode(key_id: str = Form(...), key_secret: str = Form(...)):
-    """Fetches live Razorpay Test-Mode sandbox payments and settlements via API."""
     try:
         client = RazorpayClient(key_id, key_secret)
         pays = client.fetch_payments(50)
         sets = client.fetch_settlements(50)
 
-        # Generate corresponding placeholder Invoices and Bank credits for sandbox demo
         invs = [Invoice(
             invoice_id=f"INV-{p.order_id}", order_id=p.order_id, customer_id="CUST-SANDBOX",
             invoice_date=p.payment_date, gross_amount=p.gross_amount, tax_amount=0.0, net_amount=p.gross_amount
@@ -176,6 +234,7 @@ def sync_razorpay_test_mode(key_id: str = Form(...), key_secret: str = Form(...)
             "mode": "Razorpay Test-Mode Live Sync"
         }
 
+        log_activity("RAZORPAY_API_SYNC", f"Synced 50 payments and 50 settlements live from Razorpay Sandbox")
         return {
             "status": "success",
             "message": f"Successfully synced {len(results)} live sandbox records from Razorpay API.",
