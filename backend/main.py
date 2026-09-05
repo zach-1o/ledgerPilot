@@ -3,6 +3,8 @@ import os
 from typing import List, Optional, Dict, Any
 from fastapi import FastAPI, Query, HTTPException, UploadFile, File, Form, Body, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from backend.schemas import (
     Invoice, Payment, Settlement, BankTransaction, GroundTruth, ReconciliationResult, MatchStatus, RootCause
 )
@@ -22,9 +24,15 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "http://127.0.0.1:3000",
+        "http://127.0.0.1:5173",
+        os.getenv("FRONTEND_URL", "http://localhost")
+    ],
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
 
@@ -124,12 +132,22 @@ async def handle_telegram_callback(request: Request):
         controller = CACHE.get("controller")
 
         if action == "approve" and chain_id:
-            # Execute adjustment tool
-            adj_res = FinanceToolRegistry.execute_financial_adjustment(chain_id, 500.0, "Approved by Owner via Telegram")
+            # Retrieve the proposed case
+            case_res = next((r for r in CACHE.get("results", []) if r.chain_id == chain_id), None)
+            if not case_res:
+                return {"status": "error", "message": "Transaction chain not found in cache"}
+                
+            discrepancy = case_res.discrepancy_amount
+            
+            # Re-check authority (sanity check)
+            policy_res = FinanceToolRegistry.evaluate_authority_policy(discrepancy)
+            
+            # Execute adjustment tool using the actual calculated discrepancy
+            adj_res = FinanceToolRegistry.execute_financial_adjustment(chain_id, discrepancy, "Approved by Owner via Telegram")
             audit_id = adj_res["data"]["audit_id"]
             
             if controller:
-                controller.log_trace("OWNER_APPROVED_TELEGRAM", f"Owner approved adjustment for {chain_id} via Telegram inline button", chain_id, {"audit_id": audit_id})
+                controller.log_trace("OWNER_APPROVED_TELEGRAM", f"Owner approved adjustment of ₹{discrepancy:,.2f} for {chain_id} via Telegram", chain_id, {"audit_id": audit_id, "policy_check": policy_res["message"]})
                 controller.log_trace("ACTION_EXECUTED", adj_res["message"], chain_id)
                 ver_res = FinanceToolRegistry.verify_outcome_consistency(chain_id, audit_id)
                 controller.log_trace("VERIFICATION", ver_res["message"], chain_id)
@@ -277,6 +295,19 @@ def get_case_detail(chain_id: str):
             "bank_transaction": bank_entry.model_dump() if bank_entry else None
         }
     }
+
+# --- Frontend Static Serving ---
+FRONTEND_DIST = os.path.join(os.path.dirname(__file__), "..", "frontend", "dist")
+
+if os.path.exists(FRONTEND_DIST):
+    app.mount("/assets", StaticFiles(directory=os.path.join(FRONTEND_DIST, "assets")), name="assets")
+
+    @app.get("/{full_path:path}")
+    async def serve_frontend(full_path: str):
+        requested_file = os.path.join(FRONTEND_DIST, full_path)
+        if os.path.isfile(requested_file):
+            return FileResponse(requested_file)
+        return FileResponse(os.path.join(FRONTEND_DIST, "index.html"))
 
 if __name__ == "__main__":
     import uvicorn

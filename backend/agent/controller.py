@@ -42,35 +42,8 @@ class AgentController:
         for case in unresolved:
             chain_id = case["chain_id"]
             self.log_trace("TOOL_CALL", f"Invoking RealLLMInvestigator for {chain_id}", chain_id)
-            res = investigator.investigate(case)
-            
-            # 3. Tool Call: Policy Authority Evaluation
-            auth_res = FinanceToolRegistry.evaluate_authority_policy(res.discrepancy_amount)
-            policy_status = auth_res["data"]["policy_status"]
-            self.log_trace("POLICY_CHECK", auth_res["message"], chain_id, {"policy_status": policy_status})
-
-            if policy_status == "AUTO_APPROVED":
-                # Execute adjustment tool & verify
-                adj_res = FinanceToolRegistry.execute_financial_adjustment(chain_id, res.discrepancy_amount, res.explanation)
-                audit_id = adj_res["data"]["audit_id"]
-                self.log_trace("ACTION_EXECUTED", adj_res["message"], chain_id, {"audit_id": audit_id})
-
-                ver_res = FinanceToolRegistry.verify_outcome_consistency(chain_id, audit_id)
-                self.log_trace("VERIFICATION", ver_res["message"], chain_id)
-
-                res.status = MatchStatus.RECONCILED
-                res.explanation += f" (Auto-Resolved under {audit_id})"
-            elif policy_status == "REQUIRES_OWNER_APPROVAL":
-                self.log_trace("NOTIFICATION", f"Pushed Telegram alert to owner for {chain_id} (Approval Required)", chain_id)
-                TelegramChannel.send_exception_alert(
-                    chain_id=chain_id,
-                    invoice_id=res.invoice_id or "N/A",
-                    discrepancy=res.discrepancy_amount,
-                    explanation=res.explanation,
-                    severity=res.severity.value,
-                    confidence=res.confidence_score
-                )
-
+            # 2. Dynamic Tool-Calling Agent Loop on Unresolved Cases
+            res = investigator.run_react_loop(case, self)
             results.append(res)
 
         auto_closed = len([r for r in results if r.status in [MatchStatus.RECONCILED, MatchStatus.PROBABLE_MATCH]])
